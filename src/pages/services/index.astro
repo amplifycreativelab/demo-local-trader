@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import services from "../../data/services.json";
+
+const title = "Our Services";
+---
+
+<BaseLayout title={title}>
+    <div class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                {title}
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Professional plumbing services for residential and commercial
+                properties in Perth.
+            </p>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                services.map((service) => (
+                    <ServiceCard
+                        title={service.title}
+                        description={service.description}
+                        icon={service.icon}
+                        href="contact"
+                    />
+                ))
+            }
+        </div>
+    </div>
+
+    <section class="bg-primary text-white py-20 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6">
+                Can't find what you're looking for?
+            </h2>
+            <p class="mb-8 text-xl">
+                We probably do it! Give us a call to discuss your plumbing
+                needs.
+            </p>
+            <a
+                href="tel:0400123456"
+                class="inline-block bg-white text-primary font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors"
+                >Call 0400 123 456</a
+            >
+        </div>
+    </section>
+</BaseLayout>

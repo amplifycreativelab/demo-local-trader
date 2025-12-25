@@ -1,0 +1,22 @@
+[
+    {
+        "question": "Do you offer same-day service?",
+        "answer": "Yes! We prioritize emergency and urgent jobs. If you call before 10am, we can usually attend the same day."
+    },
+    {
+        "question": "Are you licensed and insured?",
+        "answer": "Absolutely. We are fully licensed (PL99999) and carry $20M public liability insurance for your peace of mind."
+    },
+    {
+        "question": "Do you charge a call-out fee?",
+        "answer": "We have a standard service call fee which is waived if you proceed with the quoted work on the spot."
+    },
+    {
+        "question": "What areas do you service?",
+        "answer": "We service the entire Perth metropolitan area, from Joondalup to Mandurah and everywhere in between."
+    },
+    {
+        "question": "Is the quote free?",
+        "answer": "We offer free over-the-phone estimates. For complex jobs requiring onsite inspection, a standard diagnosis fee applies."
+    }
+]

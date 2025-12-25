@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Get a Quote";
+---
+
+<BaseLayout title={title}>
+    <div class="bg-primary py-16 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+            <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                Fill out the form below for a free quote, or call us directly
+                for emergency service.
+            </p>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-16">
+        <div
+            class="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+        >
+            <h2 class="text-2xl font-bold mb-6 text-gray-900">
+                Request a Free Quote
+            </h2>
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label
+                            for="name"
+                            class="block text-sm font-medium text-gray-700 mb-1"
+                            >Full Name</label
+                        >
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+                            placeholder="John Doe"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label
+                            for="phone"
+                            class="block text-sm font-medium text-gray-700 mb-1"
+                            >Phone Number <span class="text-red-500">*</span
+                            ></label
+                        >
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+                            placeholder="0400 000 000"
+                            required
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <label
+                        for="service"
+                        class="block text-sm font-medium text-gray-700 mb-1"
+                        >Service Needed</label
+                    >
+                    <select
+                        id="service"
+                        name="service"
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+                    >
+                        <option value="">Select a service...</option>
+                        <option value="emergency">Emergency Plumbing</option>
+                        <option value="drains">Blocked Drains</option>
+                        <option value="hotwater">Hot Water System</option>
+                        <option value="other">Other Inquiry</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label
+                        for="suburb"
+                        class="block text-sm font-medium text-gray-700 mb-1"
+                        >Suburb</label
+                    >
+                    <input
+                        type="text"
+                        id="suburb"
+                        name="suburb"
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+                        placeholder="e.g. Subiaco"
+                    />
+                </div>
+
+                <div>
+                    <label
+                        for="message"
+                        class="block text-sm font-medium text-gray-700 mb-1"
+                        >Details</label
+                    >
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+                        placeholder="Describe your plumbing issue..."
+                    ></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full bg-primary text-white font-bold text-lg py-4 rounded-xl hover:bg-primary-hover transition-colors shadow-lg"
+                >
+                    Get My Free Quote
+                </button>
+                <p class="text-center text-sm text-gray-500 mt-4">
+                    We'll get back to you within 30 minutes during business
+                    hours.
+                </p>
+            </form>
+        </div>
+    </div>
+</BaseLayout>

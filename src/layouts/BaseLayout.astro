@@ -1,0 +1,317 @@
+---
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+    description?: string;
+    image?: string;
+}
+
+const {
+    title,
+    description = "Fast & reliable local service in Perth. Licensed, insured, and available for same-day quotes.",
+    image = "/placeholder-social.jpg",
+} = Astro.props;
+
+const siteTitle = "QuickQuote Home Services";
+const phoneDisplay = "0400 123 456";
+const phoneHref = "tel:0400123456";
+
+// Helper to handle base URL
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title} | {siteTitle}</title>
+        <meta name="description" content={description} />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta
+            property="og:image"
+            content={image.startsWith("http")
+                ? image
+                : `${baseUrl}${image.replace(/^\//, "")}`}
+        />
+        <meta property="og:type" content="website" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta
+            name="twitter:image"
+            content={image.startsWith("http")
+                ? image
+                : `${baseUrl}${image.replace(/^\//, "")}`}
+        />
+
+        <!-- Sitemap -->
+        <link rel="sitemap" href={`${baseUrl}sitemap-index.xml`} />
+
+        <script type="application/ld+json" is:inline>
+            {
+                "@context": "https://schema.org",
+                "@type": "PlumbingService",
+                "name": "QuickQuote Home Services",
+                "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop",
+                "description": "Fast & reliable local plumbing service in Perth. Licensed, insured, and available for same-day quotes.",
+                "telephone": "0400 123 456",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Perth",
+                    "addressRegion": "WA",
+                    "addressCountry": "AU"
+                },
+                "priceRange": "$$",
+                "areaServed": "Perth",
+                "url": "https://github.com/amplifycreativelab/local-service-demo",
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": [
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday"
+                        ],
+                        "opens": "07:00",
+                        "closes": "17:00"
+                    }
+                ]
+            }
+        </script>
+    </head>
+    <body
+        class="flex flex-col min-h-screen text-text-main bg-background font-sans antialiased selection:bg-primary selection:text-white"
+    >
+        <a
+            href="#main-content"
+            class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white p-4 z-50 rounded font-medium shadow-lg transition-transform"
+            >Skip to main content</a
+        >
+
+        <!-- Header -->
+        <header
+            class="bg-white/90 backdrop-blur-md border-b border-gray-200 sticky top-0 z-40"
+        >
+            <div
+                class="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between"
+            >
+                <a
+                    href={baseUrl}
+                    class="text-2xl md:text-3xl font-bold text-primary tracking-tight flex items-center gap-2"
+                >
+                    <span class="text-accent">⚡</span> QuickQuote
+                </a>
+
+                <nav class="hidden md:flex items-center gap-8">
+                    <a
+                        href={`${baseUrl}services`}
+                        class="text-sm font-medium hover:text-primary transition-colors"
+                        >Services</a
+                    >
+                    <a
+                        href={`${baseUrl}areas`}
+                        class="text-sm font-medium hover:text-primary transition-colors"
+                        >Areas</a
+                    >
+                    <a
+                        href={`${baseUrl}about`}
+                        class="text-sm font-medium hover:text-primary transition-colors"
+                        >About</a
+                    >
+                    <div
+                        class="flex items-center gap-4 ml-4 pl-6 border-l border-gray-200"
+                    >
+                        <a
+                            href={phoneHref}
+                            class="font-bold text-primary hover:text-primary-hover flex items-center gap-2 text-lg"
+                        >
+                            <span>📞</span>
+                            {phoneDisplay}
+                        </a>
+                        <a
+                            href={`${baseUrl}contact`}
+                            class="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-primary-hover transition-colors shadow-sm transform hover:-translate-y-0.5 active:translate-y-0 duration-200"
+                        >
+                            Get Quote
+                        </a>
+                    </div>
+                </nav>
+
+                <!-- Mobile Toggle Link -->
+                <a
+                    href={`${baseUrl}contact`}
+                    class="md:hidden bg-primary text-white px-4 py-2 rounded-md font-semibold text-sm shadow-sm"
+                >
+                    Get Quote
+                </a>
+            </div>
+        </header>
+
+        <main id="main-content" class="flex-grow">
+            <slot />
+        </main>
+
+        <!-- Footer -->
+        <footer
+            class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-accent"
+        >
+            <div
+                class="container mx-auto px-4 grid md:grid-cols-4 gap-12 text-sm"
+            >
+                <div>
+                    <h3
+                        class="text-2xl font-bold mb-6 text-white tracking-tight"
+                    >
+                        QuickQuote
+                    </h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Fast, reliable, and licensed home services in Perth, WA.
+                        We're here to help simple jobs or big emergencies.
+                    </p>
+                    <div class="space-y-3">
+                        <a
+                            href={phoneHref}
+                            class="block font-bold text-lg hover:text-accent transition-colors"
+                            >{phoneDisplay}</a
+                        >
+                        <p class="text-gray-500">License: #PL99999</p>
+                    </div>
+                </div>
+                <div>
+                    <h4
+                        class="font-bold mb-6 text-white uppercase tracking-wider text-xs"
+                    >
+                        Services
+                    </h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Emergency Plumbing</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Drain Cleaning</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Hot Water Systems</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Leak Detection</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        class="font-bold mb-6 text-white uppercase tracking-wider text-xs"
+                    >
+                        Areas
+                    </h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Perth CBD</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Fremantle</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Joondalup</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                class="hover:text-white transition-colors"
+                                >Subiaco</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4
+                        class="font-bold mb-6 text-white uppercase tracking-wider text-xs"
+                    >
+                        Hours
+                    </h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li
+                            class="flex justify-between border-b border-gray-800 pb-2"
+                        >
+                            <span>Mon-Fri:</span>
+                            <span>7am - 5pm</span>
+                        </li>
+                        <li
+                            class="flex justify-between border-b border-gray-800 pb-2"
+                        >
+                            <span>Sat:</span>
+                            <span>8am - 2pm</span>
+                        </li>
+                        <li
+                            class="flex justify-between text-accent font-bold pt-1"
+                        >
+                            <span>Emergency:</span>
+                            <span>24/7</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="container mx-auto px-4 mt-12 pt-8 border-t border-gray-800 text-center text-gray-500"
+            >
+                <p>
+                    &copy; {new Date().getFullYear()} QuickQuote Services. All rights
+                    reserved. | <a href="#" class="hover:text-white">Privacy</a>
+                </p>
+            </div>
+        </footer>
+
+        <!-- Sticky Mobile Call -->
+        <div
+            class="md:hidden fixed bottom-6 left-4 right-4 z-50 pointer-events-none"
+        >
+            <a
+                href={phoneHref}
+                class="pointer-events-auto bg-accent text-white font-bold text-lg w-full py-4 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.3)] flex items-center justify-center gap-3 hover:bg-yellow-600 transition-colors border-2 border-white/20"
+            >
+                <span class="text-2xl">📞</span> Call Now {phoneDisplay}
+            </a>
+        </div>
+    </body>
+</html>

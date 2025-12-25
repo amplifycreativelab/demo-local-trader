@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Perth CBD",
+        "blurb": "Rapid response for city apartments and offices."
+    },
+    {
+        "name": "Fremantle",
+        "blurb": "Servicing all residential and commercial properties in Freo."
+    },
+    {
+        "name": "Joondalup",
+        "blurb": "Local plumbers available in Perth's northern suburbs."
+    },
+    {
+        "name": "Subiaco",
+        "blurb": "Trusted local service for Subiaco homes and businesses."
+    },
+    {
+        "name": "Victoria Park",
+        "blurb": "Fast reliable plumbing across Vic Park and surrounds."
+    },
+    {
+        "name": "Canning Vale",
+        "blurb": "South-of-river specialists available today."
+    },
+    {
+        "name": "Scarborough",
+        "blurb": "Coastal plumbing services from Scarbs to Trigg."
+    },
+    {
+        "name": "Midland",
+        "blurb": "Eastern suburbs coverage with no call-out fee."
+    }
+]

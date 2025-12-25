@@ -1,0 +1,39 @@
+[
+    {
+        "id": "emergency-plumbing",
+        "title": "Emergency Plumbing",
+        "description": "24/7 fast response for burst pipes, blocked drains, and gas leaks. We arrive within 60 minutes.",
+        "icon": "🚨",
+        "isEmergency": true
+    },
+    {
+        "id": "blocked-drains",
+        "title": "Blocked Drains",
+        "description": "Expert drain clearing using high-pressure jet blasting and CCTV inspection cameras.",
+        "icon": "🚿"
+    },
+    {
+        "id": "hot-water",
+        "title": "Hot Water Systems",
+        "description": "Repair and installation of gas, electric, and solar hot water units. Same-day replacement available.",
+        "icon": "🔥"
+    },
+    {
+        "id": "leak-detection",
+        "title": "Leak Detection",
+        "description": "Advanced electronic leak detection to find hidden water leaks behind walls or underground.",
+        "icon": "💧"
+    },
+    {
+        "id": "gas-fitting",
+        "title": "Gas Fitting",
+        "description": "Licensed gas fitters for bayonets, cooktops, heaters, and leak repairs. Safety guaranteed.",
+        "icon": "⛽"
+    },
+    {
+        "id": "tap-toilet",
+        "title": "Taps & Toilets",
+        "description": "Leaking taps and running toilets repaired or replaced. Water-saving fixtures available.",
+        "icon": "🚽"
+    }
+]

@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "Privacy Policy";
+---
+
+<BaseLayout title={title}>
+    <div class="container mx-auto px-4 py-20 max-w-3xl">
+        <h1 class="text-3xl font-bold mb-6">Privacy Policy</h1>
+        <p class="text-sm text-gray-500 mb-8">
+            Last updated: {new Date().toLocaleDateString()}
+        </p>
+
+        <div class="space-y-6 text-gray-600">
+            <p>
+                Your privacy is important to us. It is QuickQuote's policy to
+                respect your privacy regarding any information we may collect
+                from you across our website.
+            </p>
+
+            <h2 class="text-xl font-bold text-gray-900">
+                Information We Collect
+            </h2>
+            <p>
+                We only ask for personal information when we truly need it to
+                provide a service to you. We collect it by fair and lawful
+                means, with your knowledge and consent. We also let you know why
+                we’re collecting it and how it will be used.
+            </p>
+
+            <h2 class="text-xl font-bold text-gray-900">
+                How We Use Your Information
+            </h2>
+            <p>
+                We use your information to contact you regarding your quote
+                request or service booking. We do not share any personally
+                identifying information publicly or with third-parties, except
+                when required to by law.
+            </p>
+
+            <h2 class="text-xl font-bold text-gray-900">Contact Us</h2>
+            <p>
+                If you have any questions about how we handle user data and
+                personal information, feel free to contact us.
+            </p>
+        </div>
+    </div>
+</BaseLayout>

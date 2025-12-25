@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "About QuickQuote";
+---
+
+<BaseLayout title={title}>
+    <div class="bg-blue-50 py-12 mb-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold text-gray-900">{title}</h1>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <div class="prose prose-lg text-gray-600 mx-auto">
+            <p class="lead text-xl text-gray-800 font-medium mb-6">
+                QuickQuote is a locally owned and operated plumbing service
+                based in Perth, Western Australia.
+            </p>
+
+            <p class="mb-6">
+                Founded on the principles of honesty, reliability, and quality
+                workmanship, we strive to be the plumbing company you're happy
+                to recommend to friends and family. We understand that inviting
+                a tradesperson into your home requires trust, which is why all
+                our plumbers are fully licensed, insured, and police-checked.
+            </p>
+
+            <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">
+                Our Mission
+            </h3>
+            <p class="mb-6">
+                To provide fast, effective, and fair-priced plumbing solutions
+                to Perth homeowners and businesses. We believe in clear
+                communication, arriving on time, and cleaning up after
+                ourselves.
+            </p>
+
+            <h3 class="text-2xl font-bold text-gray-900 mt-8 mb-4">
+                Why Choose Us?
+            </h3>
+            <ul class="list-disc pl-6 space-y-2 mb-8">
+                <li>
+                    <strong>Local Expertise:</strong> We know Perth homes and common
+                    plumbing issues.
+                </li>
+                <li>
+                    <strong>Transparent Pricing:</strong> No hidden fees or surprises.
+                </li>
+                <li>
+                    <strong>Quality Guaranteed:</strong> We stand by our work with
+                    a satisfaction guarantee.
+                </li>
+            </ul>
+
+            <div
+                class="bg-gray-100 p-6 rounded-xl border-l-4 border-primary italic"
+            >
+                "We treat your home like it's our own."
+            </div>
+        </div>
+    </div>
+</BaseLayout>

@@ -1,0 +1,21 @@
+---
+import faqs from "../data/faqs.json";
+---
+
+<div class="space-y-4 max-w-2xl mx-auto">
+    {
+        faqs.map((faq) => (
+            <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md open:border-primary open:shadow-lg">
+                <summary class="flex items-center justify-between p-5 cursor-pointer font-bold text-gray-900 list-none select-none">
+                    <span>{faq.question}</span>
+                    <span class="transform transition-transform duration-300 group-open:rotate-180 text-primary bg-blue-50 w-8 h-8 flex items-center justify-center rounded-full">
+                        ▼
+                    </span>
+                </summary>
+                <div class="p-5 pt-0 text-gray-600 leading-relaxed bg-white">
+                    <p>{faq.answer}</p>
+                </div>
+            </details>
+        ))
+    }
+</div>
