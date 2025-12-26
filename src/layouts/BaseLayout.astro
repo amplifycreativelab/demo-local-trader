@@ -58,39 +58,36 @@ const baseUrl = import.meta.env.BASE_URL.endsWith("/")
         <!-- Sitemap -->
         <link rel="sitemap" href={`${baseUrl}sitemap-index.xml`} />
 
-        <script type="application/ld+json" is:inline>
-            {
+        <script
+            type="application/ld+json"
+            is:inline
+            set:html={JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "PlumbingService",
-                "name": "QuickQuote Home Services",
-                "image": "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop",
-                "description": "Fast & reliable local plumbing service in Perth. Licensed, insured, and available for same-day quotes.",
-                "telephone": "0400 123 456",
-                "address": {
+                name: "QuickQuote Home Services",
+                image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop",
+                description:
+                    "Fast & reliable local plumbing service in Perth. Licensed, insured, and available for same-day quotes.",
+                telephone: "0400 123 456",
+                address: {
                     "@type": "PostalAddress",
-                    "addressLocality": "Perth",
-                    "addressRegion": "WA",
-                    "addressCountry": "AU"
+                    addressLocality: "Perth",
+                    addressRegion: "WA",
+                    addressCountry: "AU",
                 },
-                "priceRange": "$$",
-                "areaServed": "Perth",
-                "url": "https://github.com/amplifycreativelab/local-service-demo",
-                "openingHoursSpecification": [
+                priceRange: "$$",
+                areaServed: "Perth",
+                url: new URL(baseUrl, Astro.site).toString(),
+                openingHoursSpecification: [
                     {
                         "@type": "OpeningHoursSpecification",
-                        "dayOfWeek": [
-                            "Monday",
-                            "Tuesday",
-                            "Wednesday",
-                            "Thursday",
-                            "Friday"
-                        ],
-                        "opens": "07:00",
-                        "closes": "17:00"
-                    }
-                ]
-            }
-        </script>
+                        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        opens: "07:00",
+                        closes: "17:00",
+                    },
+                ],
+            })}
+        />
     </head>
     <body
         class="flex flex-col min-h-screen text-text-main bg-background font-sans antialiased selection:bg-primary selection:text-white"
