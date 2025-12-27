@@ -1,34 +1,34 @@
 [
     {
-        "name": "Perth CBD",
+        "name": "Central District",
         "blurb": "Rapid response for city apartments and offices."
     },
     {
-        "name": "Fremantle",
-        "blurb": "Servicing all residential and commercial properties in Freo."
+        "name": "Harbor Quarter",
+        "blurb": "Servicing residential and commercial properties near the waterfront."
     },
     {
-        "name": "Joondalup",
-        "blurb": "Local plumbers available in Perth's northern suburbs."
+        "name": "Northside Hub",
+        "blurb": "Local technicians available across the northern district."
     },
     {
-        "name": "Subiaco",
-        "blurb": "Trusted local service for Subiaco homes and businesses."
+        "name": "Studio Row",
+        "blurb": "Trusted local service for homes and studios."
     },
     {
-        "name": "Victoria Park",
-        "blurb": "Fast reliable plumbing across Vic Park and surrounds."
+        "name": "East Market",
+        "blurb": "Fast, reliable service across the east side and surrounds."
     },
     {
-        "name": "Canning Vale",
+        "name": "South Terrace",
         "blurb": "South-of-river specialists available today."
     },
     {
-        "name": "Scarborough",
-        "blurb": "Coastal plumbing services from Scarbs to Trigg."
+        "name": "Coastal Strip",
+        "blurb": "Coastal callouts across the shoreline district."
     },
     {
-        "name": "Midland",
-        "blurb": "Eastern suburbs coverage with no call-out fee."
+        "name": "Rivergate",
+        "blurb": "Eastern district coverage with clear pricing."
     }
 ]
