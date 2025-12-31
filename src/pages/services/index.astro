@@ -4,6 +4,9 @@ import ServiceCard from "../../components/ServiceCard.astro";
 import services from "../../data/services.json";
 
 const title = "Our Services";
+const baseUrl = import.meta.env.BASE_URL.endsWith("/")
+    ? import.meta.env.BASE_URL
+    : `${import.meta.env.BASE_URL}/`;
 ---
 
 <BaseLayout title={title}>
@@ -27,7 +30,7 @@ const title = "Our Services";
                         title={service.title}
                         description={service.description}
                         icon={service.icon}
-                        href="contact"
+                        href="/contact"
                     />
                 ))
             }
@@ -44,7 +47,7 @@ const title = "Our Services";
                 next steps (concept demo).
             </p>
             <a
-                href="contact"
+                href={`${baseUrl}contact`}
                 class="inline-block bg-white text-primary font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors"
                 >Request a Quote</a
             >
